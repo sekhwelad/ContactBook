@@ -8,7 +8,7 @@ using Dapper;
 namespace AddressBook.Application.Profiles.GetProfile;
 
 internal class GetProfileQueryHandler
-     : IQueryHandler<GetProfileQuery, IReadOnlyList<ProfileResponse>>
+     : IQueryHandler<GetProfileQuery, ProfileResponse>
 {
     private readonly ISqlConnectionFactory _connectionFactory;
 
@@ -16,7 +16,7 @@ internal class GetProfileQueryHandler
     {
         _connectionFactory = sqlConnectionFactory;
     }
-    public async Task<Result<IReadOnlyList<ProfileResponse>>> Handle(GetProfileQuery request, CancellationToken cancellationToken)
+    public async Task<Result<ProfileResponse>> Handle(GetProfileQuery request, CancellationToken cancellationToken)
     {
 
         using var connection = _connectionFactory.CreateConnection();
@@ -28,9 +28,9 @@ internal class GetProfileQueryHandler
 
         if (profile == null)
         {
-            return Result.Failure<IReadOnlyList<ProfileResponse>>(ProfileErrors.NotFound);
+            return Result.Failure<ProfileResponse>(ProfileErrors.NotFound);
         }
 
-        return Result.Success<IReadOnlyList<ProfileResponse>>(new List<ProfileResponse> { profile });
+        return Result.Success(profile);
     }
 }

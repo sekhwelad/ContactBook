@@ -1,6 +1,7 @@
 ﻿using AddressBook.Application.Abstractions.Data;
 using AddressBook.Infrastructure.Data;
 using AddressBook.Infrastructure.Repositories;
+using Asp.Versioning;
 using ContactBook.Domain.Abstractions;
 using ContactBook.Domain.Persons;
 using Microsoft.EntityFrameworkCore;
@@ -14,6 +15,8 @@ public static class DependencyInjection
     public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
         AddPersistence(services, configuration);
+
+        AddApiVersioning(services);
 
         return services;
     }
@@ -32,6 +35,23 @@ public static class DependencyInjection
 
         services.AddSingleton<ISqlConnectionFactory>(_ =>
         new SqlConnectionFactory(connectionString));
+    }
+
+    private static void AddApiVersioning(IServiceCollection services)
+    {
+        services
+            .AddApiVersioning(options =>
+            {
+                options.DefaultApiVersion = new ApiVersion(1);
+                options.ReportApiVersions = true;
+                options.ApiVersionReader = new UrlSegmentApiVersionReader();
+            })
+            .AddMvc()
+            .AddApiExplorer(options =>
+            {
+                options.GroupNameFormat = "'v'V";
+                options.SubstituteApiVersionInUrl = true;
+            });
     }
 
 }
