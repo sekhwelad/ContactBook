@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace AddressBook.Infrastructure;
+namespace AddressBook.Infrastructure.Configurations;
 
 internal sealed class ProfileConfiguration : IEntityTypeConfiguration<Profile>
 {
