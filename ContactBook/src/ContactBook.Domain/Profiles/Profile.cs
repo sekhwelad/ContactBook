@@ -4,7 +4,8 @@ namespace ContactBook.Domain.Persons;
 
 public sealed class Profile : Entity
 {
-    public Name Name { get; set; }
+    public FirstName FirstName { get; set; }
+    public LastName LastName { get; set; }
     public Description Description { get; set; }
     public string Email { get; set; }
     public string Cellphone { get; set; }
