@@ -5,13 +5,13 @@ VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7EAF7A85-B807-4D66-9398-03336C81BC3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactBook.Api", "src\ContactBook.Api\ContactBook.Api.csproj", "{BC1B615D-15F9-4847-8FA0-079C3BC7CEDE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddressBook.Api", "src\ContactBook.Api\AddressBook.Api.csproj", "{BC1B615D-15F9-4847-8FA0-079C3BC7CEDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactBook.Application", "src\ContactBook.Application\ContactBook.Application.csproj", "{675D0354-32B4-4AD9-908A-69E131CD287E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddressBook.Application", "src\ContactBook.Application\AddressBook.Application.csproj", "{675D0354-32B4-4AD9-908A-69E131CD287E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactBook.Domain", "src\ContactBook.Domain\ContactBook.Domain.csproj", "{12A5BEF4-DDF0-4E84-8F45-5D747F12A470}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddressBook.Domain", "src\ContactBook.Domain\AddressBook.Domain.csproj", "{12A5BEF4-DDF0-4E84-8F45-5D747F12A470}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactBook.Infrastructure", "src\ContactBook.Infrastructure\ContactBook.Infrastructure.csproj", "{E5890F23-2523-40FE-9714-EAFBE628C972}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddressBook.Infrastructure", "src\ContactBook.Infrastructure\AddressBook.Infrastructure.csproj", "{E5890F23-2523-40FE-9714-EAFBE628C972}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

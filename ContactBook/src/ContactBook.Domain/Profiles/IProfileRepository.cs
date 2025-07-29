@@ -1,6 +1,6 @@
 ﻿namespace ContactBook.Domain.Persons;
 
-public interface IPersonRepository
+public interface IProfileRepository
 {
-    Task<Person> GetByIdAsync(Guid id, CancellationToken cancellationToken = default);
+    Task<Profile> GetByIdAsync(Guid id, CancellationToken cancellationToken = default);
 }
