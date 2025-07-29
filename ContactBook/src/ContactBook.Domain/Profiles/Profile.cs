@@ -2,7 +2,7 @@
 
 namespace ContactBook.Domain.Persons;
 
-public sealed class Person : Entity
+public sealed class Profile : Entity
 {
     public Name Name { get; set; }
     public Description Description { get; set; }
