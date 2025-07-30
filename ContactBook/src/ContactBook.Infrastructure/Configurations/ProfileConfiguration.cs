@@ -13,12 +13,10 @@ internal sealed class ProfileConfiguration : IEntityTypeConfiguration<Profile>
         builder.HasKey(x => x.Id);
 
         builder.Property(profile => profile.FirstName)
-                .HasMaxLength(200)
-                .HasConversion(firstName => firstName.Value, value => new FirstName(value));
+                .HasMaxLength(200);
 
         builder.Property(profile => profile.LastName)
-          .HasMaxLength(200)
-          .HasConversion(lastName => lastName.Value, value => new LastName(value));
+          .HasMaxLength(200);
 
     }
 }

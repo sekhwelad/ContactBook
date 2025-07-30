@@ -5,7 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace AddressBook.Api.Controllers.Profiles
 {
     [ApiController]
-    [ApiVersion(ApiVersions.V1)]
+    [ApiVersion("1.0")]
+    [ApiExplorerSettings(GroupName = "v1")]
     [Route("api/v{version:apiVersion}/profiles")]
     public class ProfilesController : ControllerBase
     {
@@ -17,9 +18,9 @@ namespace AddressBook.Api.Controllers.Profiles
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetProfile(string Email, CancellationToken cancellationToken)
+        public async Task<IActionResult> GetProfile(int PageSize, int PageNumber, CancellationToken cancellationToken)
         {
-            var query = new GetProfileQuery(Email);
+            var query = new GetProfileQuery(PageSize,PageNumber);
 
             var result = await _sender.Send(query, cancellationToken);
 

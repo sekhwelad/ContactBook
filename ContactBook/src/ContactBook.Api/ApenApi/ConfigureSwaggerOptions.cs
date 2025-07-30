@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc.ApiExplorer;
+﻿using Asp.Versioning.ApiExplorer;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
@@ -13,6 +13,7 @@ public sealed class ConfigureSwaggerOptions : IConfigureNamedOptions<SwaggerGenO
     {
         _provider = provider;
     }
+
     public void Configure(string? name, SwaggerGenOptions options)
     {
         Configure(options);
@@ -30,7 +31,7 @@ public sealed class ConfigureSwaggerOptions : IConfigureNamedOptions<SwaggerGenO
     {
         var openApiInfo = new OpenApiInfo
         {
-            Title = $"Bookify.Api v{apiVersionDescription.ApiVersion}",
+            Title = $"ContactBook.Api v{apiVersionDescription.ApiVersion}",
             Version = apiVersionDescription.ApiVersion.ToString()
         };
 

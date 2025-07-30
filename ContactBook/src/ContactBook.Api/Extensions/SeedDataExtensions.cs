@@ -1,5 +1,6 @@
 ﻿using AddressBook.Application.Abstractions.Data;
 using Bogus;
+using Dapper;
 
 namespace AddressBook.Api.Extensions;
 
@@ -30,6 +31,14 @@ public static class SeedDataExtensions
                     Website = $"{faker.Person.FullName}.co.za"
                 });
         }
+
+        const string sql = """
+            INSERT INTO Profile
+            (id,firstname,lastname,description,email,cellphone,website)
+            VALUES(@Id,@FirstName,@LastName,@Description,@Email,@Cellphone ,@Website)
+            """;
+
+        connection.Execute(sql, profiles);
     }
 }
 
