@@ -28,14 +28,15 @@ public static class SeedDataExtensions
                     Description = "I am just another person",
                     Email = faker.Person.Email,
                     Cellphone = faker.Person.Phone,
-                    Website = $"{faker.Person.FullName}.co.za"
+                    Website = $"{faker.Person.FullName}.co.za",
+                    ImageUrl = faker.Internet.Avatar()
                 });
         }
 
         const string sql = """
             INSERT INTO Profile
-            (id,firstname,lastname,description,email,cellphone,website)
-            VALUES(@Id,@FirstName,@LastName,@Description,@Email,@Cellphone ,@Website)
+            (id,firstname,lastname,description,email,cellphone,website,imageurl)
+            VALUES(@Id,@FirstName,@LastName,@Description,@Email,@Cellphone ,@Website, @ImageUrl)
             """;
 
         connection.Execute(sql, profiles);
