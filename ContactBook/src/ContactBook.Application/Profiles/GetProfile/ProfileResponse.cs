@@ -9,4 +9,5 @@ public sealed class ProfileResponse
     public string Email { get; set; }
     public string Cellphone { get; set; }
     public string Website { get; set; }
+    public string ImageUrl { get; set; }
 }

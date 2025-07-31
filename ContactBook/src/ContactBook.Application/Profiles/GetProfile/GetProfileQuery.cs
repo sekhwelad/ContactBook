@@ -1,5 +1,5 @@
-﻿using AddressBook.Application.Abstractions;
-using AddressBook.Application.Abstractions.Messaging;
+﻿using AddressBook.Application.Abstractions.Messaging;
+using AddressBook.Application.Abstractions.Pagination;
 using ContactBook.Application.Profiles.GetProfile;
 
 namespace AddressBook.Application.Profiles.GetProfile;

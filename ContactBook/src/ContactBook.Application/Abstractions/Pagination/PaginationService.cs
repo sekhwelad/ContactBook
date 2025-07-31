@@ -1,6 +1,6 @@
 ﻿using AddressBook.Application.Abstractions.Data;
 using Dapper;
-namespace AddressBook.Application.Abstractions;
+namespace AddressBook.Application.Abstractions.Pagination;
 
 public class PaginationService<T>
 {

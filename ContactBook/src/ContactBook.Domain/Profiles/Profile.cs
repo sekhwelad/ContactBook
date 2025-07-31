@@ -11,4 +11,39 @@ public sealed class Profile : Entity
     public string Cellphone { get; private set; }
     public string Website { get; private set; }
     public string ImageUrl { get; private set; }
+
+    private Profile(
+        Guid id,
+        string firstName,
+        string lastName,
+        string description,
+        string email,
+        string cellPhone,
+        string website
+        ) :base(id)
+    {
+        FirstName = firstName;
+        LastName = lastName;
+        Description = description;
+        Email = email;
+        Cellphone = cellPhone;
+        Website = website;
+    }
+
+    public Profile(){}
+
+    public static Profile CreateProfile(string firstName, string lastName, string description, string email, string cellPhone, string website)
+    {
+        var profile = new Profile(
+            Guid.NewGuid(),
+            firstName,
+            lastName,
+            description,
+            email,
+            cellPhone,
+            website
+            );
+
+        return profile;
+    }
 }

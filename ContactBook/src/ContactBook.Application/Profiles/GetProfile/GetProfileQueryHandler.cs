@@ -1,6 +1,6 @@
-﻿using AddressBook.Application.Abstractions;
-using AddressBook.Application.Abstractions.Data;
+﻿using AddressBook.Application.Abstractions.Data;
 using AddressBook.Application.Abstractions.Messaging;
+using AddressBook.Application.Abstractions.Pagination;
 using AddressBook.Domain.Profiles;
 using ContactBook.Application.Profiles.GetProfile;
 using ContactBook.Domain.Abstractions;

@@ -1,4 +1,4 @@
-﻿using AddressBook.Application.Abstractions;
+﻿using AddressBook.Application.Abstractions.Pagination;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 

@@ -1,4 +1,4 @@
-﻿namespace AddressBook.Application.Abstractions;
+﻿namespace AddressBook.Application.Abstractions.Pagination;
 
 public class PagedResult<T>
 {
