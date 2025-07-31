@@ -28,7 +28,7 @@ internal sealed class UploadProfilePictureCommandHandler : ICommandHandler<Uploa
             return Result.Failure<ProfileResponse>(ProfileErrors.NotFound); 
         }
 
-        var uploadUrl = await _fileStorage.SaveFileAsync(request.file, "uploads", profile.Id);
+        var uploadUrl = await _fileStorage.SaveFileAsync(request.File, "uploads", profile.Id);
         profile.UpdateImageUrl(uploadUrl);
 
         await _unitOfwork.SaveChangesAsync(cancellationToken);

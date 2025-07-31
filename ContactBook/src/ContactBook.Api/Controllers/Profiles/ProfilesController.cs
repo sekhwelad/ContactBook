@@ -54,7 +54,7 @@ namespace AddressBook.Api.Controllers.Profiles
         public async Task<IActionResult> UploadProfilePicture([FromForm] UploadProfilePictureCommand request, CancellationToken cancellationToken)
         {
             var command = new UploadProfilePictureCommand(
-                    request.file,
+                    request.File,
                     request.Email
                 );
 

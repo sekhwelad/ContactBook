@@ -4,5 +4,5 @@ using Microsoft.AspNetCore.Http;
 
 namespace AddressBook.Application.Profiles.UploadProfilePicture;
 
-public sealed record UploadProfilePictureCommand(IFormFile file, string Email) : ICommand<ProfileResponse>;
+public sealed record UploadProfilePictureCommand(IFormFile File, string Email) : ICommand<ProfileResponse>;
 

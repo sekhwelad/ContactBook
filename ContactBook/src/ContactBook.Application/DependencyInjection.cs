@@ -1,4 +1,5 @@
-﻿using AddressBook.Application.Abstractions.Pagination;
+﻿using AddressBook.Application.Abstractions.Behaviors;
+using AddressBook.Application.Abstractions.Pagination;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -11,6 +12,7 @@ public static class DependencyInjection
         services.AddMediatR(configuration =>
         {
             configuration.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly);
+            configuration.AddOpenBehavior(typeof(ValidationBehavior<,>));
         });
 
         services.AddTransient(typeof(PaginationService<>));

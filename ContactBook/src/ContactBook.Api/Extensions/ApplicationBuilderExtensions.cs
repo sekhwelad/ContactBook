@@ -1,4 +1,5 @@
-﻿using AddressBook.Infrastructure;
+﻿using AddressBook.Application.Middleware;
+using AddressBook.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 
 namespace AddressBook.Api.Extensions;
@@ -12,5 +13,10 @@ public static class ApplicationBuilderExtensions
         using var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
 
         dbContext.Database.Migrate();
+    }
+
+    public static void UseCustomExceptionHandler(this IApplicationBuilder app)
+    {
+        app.UseMiddleware<ExceptionHandlingMiddleware>();
     }
 }

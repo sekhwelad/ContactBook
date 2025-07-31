@@ -5,9 +5,7 @@ using AddressBook.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers()
-    .AddApplicationPart(typeof(AddressBook.Api.Controllers.Profiles.ProfilesController).Assembly)
-    .AddControllersAsServices();
+builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -39,6 +37,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCustomExceptionHandler();
 app.UseStaticFiles();
 app.UseRouting(); 
 app.MapControllers();

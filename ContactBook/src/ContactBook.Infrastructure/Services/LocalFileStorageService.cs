@@ -14,7 +14,9 @@ public class LocalFileStorageService : IFileStorageService
     }
     public async Task<string> SaveFileAsync(IFormFile file, string folder, Guid id)
     {
-        var xx = _env.WebRootPath;
+        // Ideally files would be stored on S3 buckets 
+        // Storing files locally for demonstration purposes
+
         var uploadsFolder = Path.Combine(_env.WebRootPath, folder);
         if (!Directory.Exists(uploadsFolder))
             Directory.CreateDirectory(uploadsFolder);
