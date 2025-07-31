@@ -20,11 +20,16 @@ namespace AddressBook.Api.Controllers.Profiles
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetProfile(int PageSize, int PageNumber, CancellationToken cancellationToken)
+        public async Task<IActionResult> GetProfile(int PageSize = 1, int PageNumber = 1, CancellationToken cancellationToken = default)
         {
             var query = new GetProfileQuery(PageSize, PageNumber);
 
             var result = await _sender.Send(query, cancellationToken);
+
+            if (result.IsFailure)
+            {
+                return BadRequest(result.Error);
+            }
 
             return Ok(result.Value);
         }

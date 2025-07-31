@@ -8,4 +8,8 @@ public static class ProfileErrors
           "Profile.Found",
           "The profile with the specified email was not found"
           );
+    public static Error OutOfRange = new(
+          "Profile.OutOfRange",
+          "There are no more profiles for specified pages"
+          );
 }

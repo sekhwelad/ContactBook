@@ -37,7 +37,7 @@ internal class GetProfileQueryHandler
 
         if (!pagedResult.Items.Any())
         {
-            return Result.Failure<PagedResult<ProfileResponse>>(ProfileErrors.NotFound);
+            return Result.Failure<PagedResult<ProfileResponse>>(ProfileErrors.OutOfRange);
         }
 
         return Result.Success(pagedResult);
