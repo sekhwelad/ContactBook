@@ -2,7 +2,7 @@
 
 namespace AddressBook.Application.Profiles.AddProfile;
 
-public sealed record AddProfileCommand(
+public sealed record CreateProfileCommand(
     string FirstName, 
     string LastName, 
     string Description, 

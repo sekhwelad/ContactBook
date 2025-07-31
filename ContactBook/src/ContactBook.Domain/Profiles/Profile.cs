@@ -20,7 +20,7 @@ public sealed class Profile : Entity
         string email,
         string cellPhone,
         string website
-        ) :base(id)
+        ) : base(id)
     {
         FirstName = firstName;
         LastName = lastName;
@@ -30,7 +30,7 @@ public sealed class Profile : Entity
         Website = website;
     }
 
-    public Profile(){}
+    public Profile() { }
 
     public static Profile CreateProfile(string firstName, string lastName, string description, string email, string cellPhone, string website)
     {
@@ -45,5 +45,10 @@ public sealed class Profile : Entity
             );
 
         return profile;
+    }
+
+    public void UpdateImageUrl(string imageUrl)
+    {
+        ImageUrl = imageUrl;
     }
 }

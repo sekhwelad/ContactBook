@@ -4,17 +4,17 @@ using ContactBook.Domain.Persons;
 
 namespace AddressBook.Application.Profiles.AddProfile;
 
-internal sealed class AddProfileCommandHandler : ICommandHandler<AddProfileCommand, Guid>
+internal sealed class CreateProfileCommandHandler : ICommandHandler<CreateProfileCommand, Guid>
 {
     private readonly IProfileRepository _profileRepository;
     private readonly IUnitOfwork _unitOfwork;
 
-    public AddProfileCommandHandler(IProfileRepository profileRepository,IUnitOfwork unitOfwork)
+    public CreateProfileCommandHandler(IProfileRepository profileRepository,IUnitOfwork unitOfwork)
     {
         _profileRepository = profileRepository;
         _unitOfwork = unitOfwork;
     }
-    public async Task<Result<Guid>> Handle(AddProfileCommand request, CancellationToken cancellationToken)
+    public async Task<Result<Guid>> Handle(CreateProfileCommand request, CancellationToken cancellationToken)
     {
         var profile = Profile.CreateProfile
             (

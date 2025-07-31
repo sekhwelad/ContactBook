@@ -1,6 +1,8 @@
 ﻿using AddressBook.Application.Abstractions.Data;
+using AddressBook.Application.Abstractions.Services;
 using AddressBook.Infrastructure.Data;
 using AddressBook.Infrastructure.Repositories;
+using AddressBook.Infrastructure.Services;
 using Asp.Versioning;
 using ContactBook.Domain.Abstractions;
 using ContactBook.Domain.Persons;
@@ -31,6 +33,7 @@ public static class DependencyInjection
         });
 
         services.AddScoped<IProfileRepository, ProfileRepository>();
+        services.AddScoped<IFileStorageService, LocalFileStorageService>();
         services.AddScoped<IUnitOfwork>(sp => sp.GetRequiredService<ApplicationDbContext>());
 
         services.AddSingleton<ISqlConnectionFactory>(_ =>

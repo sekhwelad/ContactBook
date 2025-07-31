@@ -21,4 +21,8 @@
     <ProjectReference Include="..\ContactBook.Infrastructure\AddressBook.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
 </Project>
