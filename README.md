@@ -40,8 +40,12 @@ This project follows the **Clean Architecture** and **DDD**. Each layer has a cl
 
 ## Getting Started
 
-**To Run the APP
-<pre> Go tp Package Manager Console <br>Add-Migration Migration-Name<br> Update-Database </pre>
+**Enter the following on Package Manager Console**<br>
+Remember to press enter after every command below
+<pre><br>Add-Migration Migration-Name<br>Update-Database </pre>
+
+Now you can run the APP. <br>
+**Happy Debugging**
 
 
 ## Author
