@@ -38,7 +38,10 @@ This project follows the **Clean Architecture** and **DDD**. Each layer has a cl
 - Add Unit , Architecture and Integration Tests
 - Implement Logging with Serilog or Datadog
 
-<pre> Add-Migration Migration-Name<br> Update-Database </pre>
+## Getting Started
+
+**To Run the APP
+<pre> Go tp Package Manager Console <br>Add-Migration Migration-Name<br> Update-Database </pre>
 
 
 ## Author
