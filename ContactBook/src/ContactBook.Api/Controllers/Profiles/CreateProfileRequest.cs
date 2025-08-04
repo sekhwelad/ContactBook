@@ -6,5 +6,6 @@ public sealed record CreateProfileRequest(
      string Description,
      string Email,
      string Cellphone,
-     string Website);
+     string Website,
+     DateTime CreatedDate);
 

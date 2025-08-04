@@ -5,6 +5,16 @@ using AddressBook.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowLocalhost", policy =>
+    {
+        policy.WithOrigins("http://localhost:4200")
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
+
 builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
@@ -33,9 +43,9 @@ if (app.Environment.IsDevelopment())
     });
 
     app.ApplyMigrations();
-    //app.SeedData();
+    app.SeedData();
 }
-
+app.UseCors("AllowLocalhost");
 app.UseHttpsRedirection();
 app.UseCustomExceptionHandler();
 app.UseStaticFiles();

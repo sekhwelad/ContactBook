@@ -12,5 +12,8 @@ internal sealed class CreateProfileCommandValidator :AbstractValidator<CreatePro
         RuleFor(c=> c.CellPhone).NotEmpty();
         RuleFor(c=> c.Website).NotEmpty();
         RuleFor(c=> c.Email).EmailAddress();
+        RuleFor(c => c.CreatedDate)
+        .Must(date => date != default)
+        .WithMessage("CreatedDate must be a valid date.");
     }
 }

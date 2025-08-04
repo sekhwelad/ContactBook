@@ -31,7 +31,7 @@ internal class GetProfileQueryHandler
     {
         var pagedResult = await _paginationService.GetPageAsync(
             tableName: nameof(Profile),
-            orderBy: "FirstName DESC",
+            orderBy: "CreatedDate DESC",
             pageSize: request.PageSize,
             pageNumber: request.PageNumber);
 

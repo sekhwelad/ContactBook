@@ -43,7 +43,8 @@ namespace AddressBook.Api.Controllers.Profiles
                 request.Description,
                 request.Email,
                 request.Cellphone,
-                request.Website);
+                request.Website,
+                DateTime.Now);
 
             var result = await _sender.Send(command, cancellationToken);
 

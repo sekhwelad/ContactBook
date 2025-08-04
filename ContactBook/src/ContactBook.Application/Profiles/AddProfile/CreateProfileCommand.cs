@@ -8,5 +8,6 @@ public sealed record CreateProfileCommand(
     string Description, 
     string Email,
     string CellPhone,
-    string Website) : ICommand<Guid>;
+    string Website,
+    DateTime CreatedDate) : ICommand<Guid>;
 

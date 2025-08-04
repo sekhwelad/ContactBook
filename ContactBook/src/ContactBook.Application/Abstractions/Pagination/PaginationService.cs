@@ -5,25 +5,10 @@ namespace AddressBook.Application.Abstractions.Pagination;
 public class PaginationService<T>
 {
     private readonly ISqlConnectionFactory _connectionFactory;
-    private readonly string _table;
-    private readonly string _orderBy;
-
-    public int PageSize { get; }
-    public int CurrentPage { get; private set; } = 1;
-    public int TotalCount { get; private set; }
 
     public PaginationService(ISqlConnectionFactory sqlConnectionFactory)
     {
         _connectionFactory = sqlConnectionFactory;
-    }
-
-    public async Task<int> GetTotalCountAsync()
-    {
-        using var connection = _connectionFactory.CreateConnection();
-
-        var sql = $"SELECT COUNT(*) FROM {_table}";
-        await connection.ExecuteScalarAsync<int>(sql);
-        return await connection.ExecuteScalarAsync<int>(sql);
     }
 
     public async Task<PagedResult<T>> GetPageAsync(

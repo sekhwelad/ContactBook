@@ -18,12 +18,13 @@ internal sealed class CreateProfileCommandHandler : ICommandHandler<CreateProfil
     {
         var profile = Profile.CreateProfile
             (
-                request.LastName,
                 request.FirstName,
+                request.LastName,
                 request.Description,
                 request.Email,
                 request.CellPhone,
-                request.Website
+                request.Website,
+                request.CreatedDate
             );
 
         _profileRepository.Add(profile);
